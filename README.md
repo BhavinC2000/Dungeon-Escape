@@ -1,5 +1,5 @@
 # Dungeon-Escape
-Java-coded game written in Processing IDE
+Java-coded game written in Processing IDE w/ custom graphics
 
 The objective of this game is to escape each dungeon by reaching the exit and moving on to the next level. The player is depicted by the grey block and the exit is depicted by the red block. The player's goal is to reach the exit within the 60-second time limit. Once you complete a level, the timer will reset back to 60 seconds.
 
