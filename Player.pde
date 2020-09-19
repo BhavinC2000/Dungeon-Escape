@@ -5,6 +5,7 @@ class Player {
   int deltay;
   int y;
   Map map;
+  boolean[][] water;
   boolean leftblock;
   boolean rightblock;
   boolean upblock;
@@ -17,6 +18,7 @@ class Player {
     this.deltax = 0;
     this.deltay = 0;
     this.map = map;
+    this.water = map.getIsWater();
     leftblock = false;
     rightblock = false;
     upblock = false;
@@ -57,21 +59,21 @@ class Player {
   void checkWater() {
     if (x <= 0) {
       leftblock = true;
-    } else if (keyCode == LEFT && map.getIsWater()[x / 30 - 1][y / 30]) {
+    } else if (keyCode == LEFT && water[x / 30 - 1][y / 30]) {
       leftblock = true;
     } else {
       leftblock = false;
     }
     if (x >= 840) {
       rightblock = true;
-    } else if (keyCode == RIGHT && map.getIsWater()[x / 30 + 1][y / 30]) {
+    } else if (keyCode == RIGHT && water[x / 30 + 1][y / 30]) {
       rightblock = true;
     } else {
       rightblock = false;
     }
     if (y <= 0) {
       upblock = true;
-    } else if (keyCode == UP && map.getIsWater()[x / 30][y / 30 - 1]) {
+    } else if (keyCode == UP && water[x / 30][y / 30 - 1]) {
       upblock = true;
     } else {
       upblock = false;
